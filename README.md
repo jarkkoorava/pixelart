@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Pixelart -tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple pixelart tool to draw pixel art on a 16x16 pixel canvas. I made it to practise developing with React, TypeScript and to learn about HTML Canvas. 
 
-Currently, two official plugins are available:
+## Technologies used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application is made using the following technolgies
+- Vite
+- React
+- TypeScript
+- HTML Canvas
 
-## Expanding the ESLint configuration
+## Try it out!
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This application is deployed at [github pages](https://jarkkoorava.github.io/pixelart). Try it out!
 
-- Configure the top-level `parserOptions` property like this:
+## TODO / Upcoming features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+I am planning to include the following features in the future
+- Better visual design overall
+- Use Tailwind CSS
+- Primary / Secondary color for mouse button 1 and 2
+- Different color palettes
+- Create own color palette
+  - Color picker
+- Different tools
+  - Paint bucket
+  - Line tool
+  - Rectangle tool
+  - Ellipse tool
+- Preview pixel art on 1:1 resolution or at least way smaller. Now the pixel size in canvas is 20x20 pixels
+- Different canvas sizes (now it is only 16x16 pixels)
+- Default pixel art on startup made by me
+- Browse premade pixel arts made by me
+- Save pixel art into state to allow working on different pieces simultaneously
+  - Browse saved pixel arts made during the session
+- Save pixel art into a file on client computer
+- Load pixel art from a file on client computer
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
