@@ -1,13 +1,24 @@
 import ColorPicker from "./ColorPicker"
 
-const Toolbar = () => {
+interface color {
+  id: string | null;
+  hex: string;
+  name: string;
+}
+
+interface props {
+  selectedColor: color;
+  changeSelectedColor: (newColor: color) => void;
+}
+
+const Toolbar = ({selectedColor, changeSelectedColor}: props) => {
   return (
     <>
       <div className="toolbar">
         <h2 className="toolbar-header">
           Toolbar
         </h2>
-        <ColorPicker />
+        <ColorPicker selectedColor={selectedColor} changeSelectedColor={changeSelectedColor}/>
         </div>
     </>
   )

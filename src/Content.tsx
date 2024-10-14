@@ -1,11 +1,21 @@
-import DrawingArea from "./DrawingArea"
-import Toolbar from "./Toolbar"
+import DrawingArea from "./DrawingArea";
+import Toolbar from "./Toolbar";
 
-const Content = () => {
+interface color {
+  id: string | null;
+  hex: string;
+  name: string;
+}
+interface props {
+  selectedColor: color;
+  changeSelectedColor: (newColor: color) => void;
+}
+
+const Content = ({selectedColor, changeSelectedColor}: props) => {
   return (
     <div className="content">
       <DrawingArea/>
-      <Toolbar />
+      <Toolbar selectedColor={selectedColor} changeSelectedColor={changeSelectedColor}/>
     </div>
   )
 }

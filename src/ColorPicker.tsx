@@ -1,22 +1,33 @@
 import colorPalette from "./colorPalette";
+import ColorPickerTile from "./ColorPickerTile";
+import SelectedColorDisplay from "./SelectedColorDisplay";
 
-const ColorPicker = () => {
-  const colorsToRender = colorPalette.map((color) => {
+interface color {
+  id: string | null;
+  hex: string;
+  name: string;
+}
+
+interface props {
+  selectedColor: color;
+  changeSelectedColor: (newColor: color) => void;
+}
+
+const ColorPicker = ({selectedColor, changeSelectedColor}: props) => {
+  const colorsToRender = colorPalette.map((individualColor) => {
     return (
-      <div
-        key={color.id}
-        className="color-picker-color"
-        style={{ backgroundColor: color.hex }}
-      ></div>
+      <ColorPickerTile
+        key={individualColor.id}
+        selectedColor={individualColor}
+        changeSelectedColor={changeSelectedColor}
+    ></ColorPickerTile>
     );
   });
 
   return (
     <>
       <h3>Selected color</h3>
-      <div className="selected-color-container">
-        <div className="selected-color"></div>
-      </div>
+      <SelectedColorDisplay selectedColor={selectedColor} />
       <h3>Select a color</h3>
       <div className="color-picker">{colorsToRender}</div>
     </>
