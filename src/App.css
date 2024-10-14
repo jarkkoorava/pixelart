@@ -43,8 +43,12 @@ h1, h2 {
 
 .drawing-area-canvas {
   display: flex;
-  width: 280px;
-  height: 280px;
+}
+
+.canvas {
+  width: 320px;
+  height: 320px;
+  image-rendering: pixelated;
 }
 
 .toolbar {
@@ -82,4 +86,13 @@ h1, h2 {
 .color-picker-color {
   height: 18px;
   width: 18px;
+}
+
+.reset-button {
+  font-family: "Pixelify Sans", sans-serif;
+  color: #ffffff;
+  background-color: #005784;
+  border: 0px;
+  padding: 10px;
+  margin: 15px;
 }
