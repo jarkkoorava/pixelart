@@ -16,7 +16,6 @@ const colorPalette = [
   {id: uuidv4(), hex: "#1B2632"},
   {id: uuidv4(), hex: "#005784"},
   {id: uuidv4(), hex: "#31A2F2"},
-  {id: uuidv4(), hex: "#31A2F2"},
   {id: uuidv4(), hex: "#B2DCEF"},
 ];
 

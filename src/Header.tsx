@@ -1,7 +1,9 @@
 const Header = () => {
   return (
-    <div className="header">Pixel art tool</div>
-  )
-}
+    <div className="header">
+      <h1>Pixel art tool</h1>
+    </div>
+  );
+};
 
-export default Header
+export default Header;
